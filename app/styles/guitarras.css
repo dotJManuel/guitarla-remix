@@ -21,6 +21,8 @@
     grid-template-columns: 2fr 3fr;
     gap: 1rem;
     align-items: center;
+    max-width: 70rem;
+    margin: 0 auto;
 }
 
 .guitarra .contenido {
@@ -39,6 +41,8 @@
     -webkit-line-clamp: 6;
     overflow: hidden;
     font-size: 1.8rem;
+    text-transform: none;
+    color: var(--black);
 }
 
 .guitarra .precio {
@@ -48,21 +52,8 @@
     font-weight: 900;
 }
 
-.guitarra .enlace {
-    margin-top: 2rem;
-    display: block;
-    background-color: var(--black);
-    color: var(--white);
-    text-decoration: none;
-    padding: .5rem;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    font-weight: 900;
-    transition-property: background-color;
-    transition-duration: 300ms;
-}
-
-.guitarra .enlace:hover {
-    background-color: var(--primary);
+.contenido .texto {
+    text-transform: none;
+    color: var(--black);
+    font-size: 2rem;
 }

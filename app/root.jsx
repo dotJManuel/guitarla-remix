@@ -3,7 +3,9 @@ import {
     Links,
     Outlet,
     Scripts,
-    LiveReload
+    LiveReload,
+    useCatch,
+    Link
 } from '@remix-run/react'
 import styles from '~/styles/index.css'
 import Header from '~/components/header'
@@ -54,7 +56,7 @@ export default function App() {
     )
 }
 
-function Document({children}) {
+function Document({ children }) {
     return (
         <html lang="es">
             <head>
@@ -69,5 +71,25 @@ function Document({children}) {
                 <LiveReload />
             </body>
         </html>
+    )
+}
+
+/** Manejo de errores */
+export function CatchBoundary() {
+    const error = useCatch()
+    return (
+        <Document>
+            <p className='error'>{error.status} {error.statusText}</p>
+            <Link className='error-enlace' to="/"> Tal vez quieras volver a la página principal</Link>
+        </Document>
+    )
+}
+
+export function ErrorBoundary({error}) {
+    return (
+        <Document>
+            <p className='error'>{error.status} {error.statusText}</p>
+            <Link className='error-enlace' to="/"> Tal vez quieras volver a la página principal</Link>
+        </Document>
     )
 }
