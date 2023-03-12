@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useLoaderData } from "react-router"
+import { useLoaderData, useOutletContext } from "react-router"
 import { getGuitarra } from '~/models/guitarras.server'
 
 export async function loader({ params }) {
@@ -32,6 +32,7 @@ export function meta({data}) {
 
 function Guitarra() {
 
+    const { agregarCarrito } = useOutletContext()
     const [ cantidad, setCantidad ] = useState(0)
     const guitarra = useLoaderData()
     const { nombre, descripcion, imagen, precio } = guitarra.data[0].attributes
@@ -51,6 +52,8 @@ function Guitarra() {
             precio,
             cantidad
         }
+        
+        agregarCarrito(guitarraSeleccionada)
     }
     
     return (
