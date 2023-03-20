@@ -52,5 +52,5 @@ rm -rf app
 cp -R ../my-old-remix-app/app app
 ```
 
-Site Web
-[Link text Here](https://guitarla-remix-kappa.vercel.app/)
+Website
+[Deployment](https://guitarla-remix-kappa.vercel.app/)
